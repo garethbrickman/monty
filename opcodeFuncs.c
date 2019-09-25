@@ -9,7 +9,7 @@
 size_t print_dlistint(const stack_t *h)
 {
     int x;
-    //printf("test");
+
     for (x = 0; h != NULL; x++)
     {
         printf("%i\n", h->n);
@@ -41,12 +41,14 @@ stack_t *add_dnodeint(stack_t **head, const int n)
     return (newhead);
 }
 
-stack_t *pint(stack_t *head)
+int pint(stack_t *head)
 {
     printf("%i\n", head->n);
+    return(1);
 }
 
-stack_t *pop(stack_t **head)
+int pop(stack_t **head)
 {
     (*head) = (*head)->next;
+    return(1);
 }

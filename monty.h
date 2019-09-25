@@ -1,5 +1,5 @@
-#ifndef HOLBERTON
-#define HOLBERTON
+#ifndef MONTY_H
+#define MONTY_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -38,8 +38,8 @@ extern stack_t *head;
 
 size_t print_dlistint(const stack_t *h);
 stack_t *add_dnodeint(stack_t **head, const int n);
-stack_t *pint(stack_t *head);
-stack_t *pop(stack_t **head);
+int pint(stack_t *head);
+int pop(stack_t **head);
 int strdigit(char *str);
 
 #endif
