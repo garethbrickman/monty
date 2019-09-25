@@ -5,6 +5,7 @@ int isIN(char *key, char **commands);
 void execute(char *opcode, int counter, char *data);
 int main(int argc, char const *argv[])
 {
+	instruction_t fake;
 	FILE *fp;
 	char *linestr = NULL;
 	char *opcode = NULL;
