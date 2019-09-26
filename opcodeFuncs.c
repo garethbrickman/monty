@@ -8,19 +8,19 @@
  */
 void print_dlistint(stack_t **head, unsigned int counter)
 {
-    (void)counter; 
-    if ((*head) == NULL)
-    {
-        return;
-    }
-    
-    int x;
-    stack_t *temp = (*head);
-    for (x = 0; temp != NULL; x++)
-    {
-        printf("%i\n", temp->n);
-        temp = temp->next;
-    }
+	int x;
+	stack_t *temp = (*head);
+	(void)counter;
+
+	if ((*head) == NULL)
+	{
+		return;
+	}
+	for (x = 0; temp != NULL; x++)
+	{
+		printf("%i\n", temp->n);
+		temp = temp->next;
+	}
 }
 
 /**
@@ -33,7 +33,6 @@ void print_dlistint(stack_t **head, unsigned int counter)
  */
 stack_t *add_dnodeint(stack_t **head, const int n)
 {
-    printf("*\n*\n*\n*\n*\n*\n");
     stack_t *newhead = NULL;
     newhead = malloc(sizeof(stack_t));
     if (newhead == NULL)

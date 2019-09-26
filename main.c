@@ -36,45 +36,37 @@ int main(int argc, char const *argv[])
 
 void execute(char *opcode, unsigned int counter, char *data)
 {
-	
-    if (strcmp(opcode, "push") == 0)
-    {
-	    if (strdigit(data) != 1){
-		    printf("L%u: usage: push integer\n", counter);
-		    exit(EXIT_FAILURE);
-	    }
-        add_dnodeint(&head, atoi(data));
-    }
-	
 	void (*f)(stack_t **stack, unsigned int line_number);
+	if (strcmp(opcode, "push") == 0)
+	{
+		if (strdigit(data) != 1){
+			printf("L%u: usage: push integer\n", counter);
+			exit(EXIT_FAILURE);
+		}
+		add_dnodeint(&head, atoi(data));
+	}
 	f = get_op_func(opcode);
 	if (f != NULL)
 	{
 		(f(&head, counter));
 	}
-	
-	
-    
-   	//get_op_func(opcode)(&head, counter);
-	/*
-	else if (strcmp(opcode, "pall") == 0)
-    {
-	    print_dlistint(&head, counter);
-    }
-    else if (strcmp(opcode, "pint") == 0)
-    {
-	    pint(&head, counter);
-    }
-    else if (strcmp(opcode, "pop") == 0)
-    {
-	    pop(&head, counter);
-    }
-	else if (strcmp(opcode, "add") == 0)
-    {
-	    add(&head, counter);
-    }
+   	/*get_op_func(opcode)(&head, counter);
+
+	  else if (strcmp(opcode, "pall") == 0)
+	  {
+	  print_dlistint(&head, counter);
+	  }
+	  else if (strcmp(opcode, "pint") == 0)
+	  {
+	  pint(&head, counter);
+	  }
+	  else if (strcmp(opcode, "pop") == 0)
+	  {
+	  pop(&head, counter);
+	  }
+	  else if (strcmp(opcode, "add") == 0)
+	  {
+	  add(&head, counter);
+	  }
 	*/
-	
 }
-
-
