@@ -11,7 +11,7 @@
 int (*get_op_func(char *s))(stack_t, unsigned int)
 {
 
-	op_t ops[] = {
+	instruction_t ops[] = {
 		{"push", add_dnodeint},
 		{"pall", print_dlistint},
 		{"pint", pint},
