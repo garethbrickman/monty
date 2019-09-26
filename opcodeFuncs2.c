@@ -16,7 +16,7 @@ void sub(stack_t **head, unsigned int counter)
 
 	if (((*head)->next == NULL) || ((*head) == NULL))
 	{
-		fprintf(stderr, "L%u: can't sub, stack too short", counter);
+		fprintf(stderr, "L%u: can't sub, stack too short\n", counter);
 		exit(EXIT_FAILURE);
 	}
 	number = number + (*head)->n;
@@ -41,7 +41,7 @@ void mul(stack_t **head, unsigned int counter)
 
 	if (((*head)->next == NULL) || ((*head) == NULL))
 	{
-		fprintf(stderr, "L%u: can't mul, stack too short", counter);
+		fprintf(stderr, "L%u: can't mul, stack too short\n", counter);
 		exit(EXIT_FAILURE);
 	}
 	number = number + (*head)->n;
@@ -65,12 +65,12 @@ void pchar(stack_t **head, unsigned int counter)
 
 	if ((*head) == NULL)
 	{
-		fprintf(stderr, "L%u: can't pchar, stack empty", counter);
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", counter);
 		exit(EXIT_FAILURE);
 	}
 	else if ((number < 0) || (number > 127))
 	{
-		fprintf(stderr, "L%u: can't pchar, value out of range", counter);
+		fprintf(stderr, "L%u: can't pchar, value out of range\n", counter);
 		exit(EXIT_FAILURE);
 	}
 	printf("%c\n", number);
@@ -97,12 +97,12 @@ void pstr(stack_t **head, unsigned int counter)
 		number = temp->n;
 		if (temp == NULL)
 		{
-			fprintf(stderr, "L%u: can't pchar, stack empty", counter);
+			fprintf(stderr, "L%u: can't pchar, stack empty\n", counter);
 			exit(EXIT_FAILURE);
 		}
 		else if ((number < 0) || (number > 127))
 		{
-			fprintf(stderr, "L%u: can't pchar, value out of range", counter);
+			fprintf(stderr, "L%u: can't pchar, value out of range\n", counter);
 			exit(EXIT_FAILURE);
 		}
 		printf("%c", number);
@@ -127,7 +127,7 @@ void swap(stack_t **head, unsigned int counter)
 
 	if (((*head)->next == NULL) || ((*head) == NULL))
 	{
-		fprintf(stderr, "L%u: can't swap, stack too short", counter);
+		fprintf(stderr, "L%u: can't swap, stack too short\n", counter);
 		exit(EXIT_FAILURE);
 	}
 	number1 = (*head)->n;

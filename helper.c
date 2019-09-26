@@ -12,6 +12,8 @@ int strdigit(char *str)
 	char *copy = str;
 	int i = 0;
 
+	if (copy[i] == '-')
+		i = 1;
 	while (copy[i] != '\0')
 	{
 		if (!isdigit(copy[i]))
@@ -19,4 +21,20 @@ int strdigit(char *str)
 		i++;
 	}
 	return (1);
+}
+
+/**
+ * freestack - function frees stack_t linked list
+ *
+ * Return: void
+ */
+void freestack(void)
+{
+	stack_t *tmp;
+
+	if (head == NULL)
+		return;
+	tmp = head;
+	head = head->next;
+	free(tmp);
 }

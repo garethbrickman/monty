@@ -80,37 +80,4 @@ void execute(char *opcode, unsigned int counter, char *data)
 		fprintf(stderr, "L%u: unknown instruction %s\n", counter, opcode);
 		exit(EXIT_FAILURE);
 	}
-/* get_op_func(opcode)(&head, counter); */
-/*   else if (strcmp(opcode, "pall") == 0) */
-/*   { */
-/*   print_dlistint(&head, counter); */
-/*   } */
-/*   else if (strcmp(opcode, "pint") == 0) */
-/*   { */
-/*   pint(&head, counter); */
-/*   } */
-/*   else if (strcmp(opcode, "pop") == 0) */
-/*   { */
-/*   pop(&head, counter); */
-/*   } */
-/*   else if (strcmp(opcode, "add") == 0) */
-/*   { */
-/*   add(&head, counter); */
-/*   } */
-}
-
-/**
- * freestack - function frees stack_t linked list
- *
- * Return: void
- */
-void freestack(void)
-{
-	stack_t *tmp;
-
-	if (head == NULL)
-		return;
-	tmp = head;
-	head = head->next;
-	free(tmp);
 }

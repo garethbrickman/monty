@@ -102,7 +102,7 @@ void add(stack_t **head, unsigned int counter)
 
 	if (((*head)->next == NULL) || ((*head) == NULL))
 	{
-		fprintf(stderr, "L%u: can't add, stack too short", counter);
+		fprintf(stderr, "L%u: can't add, stack too short\n", counter);
 		exit(EXIT_FAILURE);
 	}
 
