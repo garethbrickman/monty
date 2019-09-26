@@ -1,5 +1,4 @@
 #include "monty.h"
-
 stack_t *head = NULL;
 
 /**
@@ -34,6 +33,7 @@ int main(int argc, char const *argv[])
 		linestr = strtok(linestr, "\n");
 		opcode = strtok(linestr, " ");
 		data = strtok(NULL, " ");
+
 		if (opcode)
 			execute(opcode, counter, data);
 		counter++;
