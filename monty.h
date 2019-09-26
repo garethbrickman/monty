@@ -50,4 +50,5 @@ void mul(stack_t **head, unsigned int counter);
 void pchar(stack_t **head, unsigned int counter);
 void pstr(stack_t **head, unsigned int counter);
 void execute(char *opcode, unsigned int counter, char *data);
+void freestack(void);
 #endif
