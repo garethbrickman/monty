@@ -45,5 +45,9 @@ void print_dlistint(stack_t **h, unsigned int counter);
 void pint(stack_t **head, unsigned int counter);
 void pop(stack_t **head, unsigned int counter);
 void add(stack_t **head, unsigned int counter);
+void sub(stack_t **head, unsigned int counter);
+void mul(stack_t **head, unsigned int counter);
+void pchar(stack_t **head, unsigned int counter);
+void pstr(stack_t **head, unsigned int counter);
 void execute(char *opcode, unsigned int counter, char *data);
 #endif

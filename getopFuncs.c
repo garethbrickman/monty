@@ -15,6 +15,10 @@ void (*get_op_func(char *s))(stack_t **, unsigned int)
 		{"pint", pint},
 		{"pop", pop},
 		{"add", add},
+		{"sub", sub},
+		{"mul", mul},
+		{"pchar", pchar},
+		{"pstr", pstr},
 		{NULL, NULL}
 	};
 	int i = 0;
