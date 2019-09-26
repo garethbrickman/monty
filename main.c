@@ -21,10 +21,15 @@ int main(int argc, char const *argv[])
 	ssize_t charsprinted;
 	unsigned int counter = 1;
 
-	fp = fopen(argv[1], "r");
 	if (argc != 2)
 	{
-		printf("USAGE: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
+	}
+	fp = fopen(argv[1], "r");
+	if (fp == NULL)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	while ((charsprinted = getline(&linestr, &n, fp)) != -1)
@@ -57,19 +62,22 @@ void execute(char *opcode, unsigned int counter, char *data)
 {
 	void (*f)(stack_t **stack, unsigned int line_number);
 
+	f = get_op_func(opcode);
 	if (strcmp(opcode, "push") == 0)
 	{
 		if (strdigit(data) != 1)
 		{
-			printf("L%u: usage: push integer\n", counter);
+			fprintf(stderr, "L%u: usage: push integer\n", counter);
 			exit(EXIT_FAILURE);
 		}
 		add_dnodeint(&head, atoi(data));
 	}
-	f = get_op_func(opcode);
-	if (f != NULL)
-	{
+	else if (f != NULL)
 		(f(&head, counter));
+	else
+	{
+		fprintf(stderr, "L%u: unknown instruction %s\n", counter, opcode);
+		exit(EXIT_FAILURE);
 	}
 /* get_op_func(opcode)(&head, counter); */
 /*   else if (strcmp(opcode, "pall") == 0) */
