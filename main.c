@@ -73,4 +73,3 @@ int isIN(char *key, char **commands)
 	}
 	return (0);
 }
-
