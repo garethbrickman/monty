@@ -52,3 +52,21 @@ int pop(stack_t **head)
     (*head) = (*head)->next;
     return(1);
 }
+
+int add(stack_t **head, int counter)
+{
+	stack_t *temp;
+	int number = 0;
+
+	if ((*head)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't add, stack too short", counter);
+		exit(EXIT_FAILURE);
+	}
+
+	number = number + (*head)->n;
+	temp = (*head)->next;
+	temp->n = temp->n + number;
+	(*head) = temp;
+	return(1);
+}
