@@ -75,6 +75,14 @@ void pchar(stack_t **head, unsigned int counter)
 	}
 	printf("%c\n", number);
 }
+/**
+ * pstr - function prints char at top of the stack
+ *
+ *@head: double pointer to head of linked list
+ *@counter: unsigned int for line counter
+ *
+ * Return: void
+ */
 void pstr(stack_t **head, unsigned int counter)
 {
 	stack_t *temp = (*head);
