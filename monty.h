@@ -37,11 +37,12 @@ typedef struct instruction_s
 /* Global Variable */
 extern stack_t *head;
 /* Prototypes */
-size_t print_dlistint(const stack_t *h);
 stack_t *add_dnodeint(stack_t **head, const int n);
-int pint(stack_t *head);
-int pop(stack_t **head);
 int strdigit(char *str);
-int add(stack_t **head, int counter);
-int (*get_op_func(char *s))(stack_t, unsigned int);
+void (*get_op_func(char *s))(stack_t **, unsigned int);
+void print_dlistint(stack_t **h, unsigned int counter);
+void pint(stack_t **head, unsigned int counter);
+void pop(stack_t **head, unsigned int counter);
+void add(stack_t **head, unsigned int counter);
+void execute(char *opcode, unsigned int counter, char *data);
 #endif

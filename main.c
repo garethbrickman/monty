@@ -2,7 +2,7 @@
 
 stack_t *head = NULL;
 int isIN(char *key, char **commands);
-void execute(char *opcode, int counter, char *data);
+void execute(char *opcode, unsigned int counter, char *data);
 int main(int argc, char const *argv[])
 {
 	FILE *fp;
@@ -12,7 +12,7 @@ int main(int argc, char const *argv[])
 	char *data;
 	size_t n;
 	ssize_t charsprinted;
-	int counter = 1;
+	unsigned int counter = 1;
 	fp = fopen(argv[1], "r");
 	if (argc != 2)
 	{
@@ -34,8 +34,9 @@ int main(int argc, char const *argv[])
 	return 0;
 }
 
-void execute(char *opcode, int counter, char *data)
+void execute(char *opcode, unsigned int counter, char *data)
 {
+	
     if (strcmp(opcode, "push") == 0)
     {
 	    if (strdigit(data) != 1){
@@ -44,35 +45,36 @@ void execute(char *opcode, int counter, char *data)
 	    }
         add_dnodeint(&head, atoi(data));
     }
-    else if (strcmp(opcode, "pall") == 0)
+	
+	void (*f)(stack_t **stack, unsigned int line_number);
+	f = get_op_func(opcode);
+	if (f != NULL)
+	{
+		(f(&head, counter));
+	}
+	
+	
+    
+   	//get_op_func(opcode)(&head, counter);
+	/*
+	else if (strcmp(opcode, "pall") == 0)
     {
-	    print_dlistint(head);
+	    print_dlistint(&head, counter);
     }
     else if (strcmp(opcode, "pint") == 0)
     {
-	    pint(head);
+	    pint(&head, counter);
     }
     else if (strcmp(opcode, "pop") == 0)
     {
-	    pop(&head);
+	    pop(&head, counter);
     }
 	else if (strcmp(opcode, "add") == 0)
     {
 	    add(&head, counter);
     }
+	*/
+	
 }
 
-int isIN(char *key, char **commands)
-{
-	int len = sizeof(commands)/sizeof(commands[0]);
-	int i;
 
-	for(i = 0; i < len; ++i)
-	{
-		if(!strcmp(commands[i], key))
-		{
-			return (1);
-		}
-	}
-	return (0);
-}

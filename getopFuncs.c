@@ -8,11 +8,9 @@
  * Return: required function or NULL
  */
 
-int (*get_op_func(char *s))(stack_t, unsigned int)
+void (*get_op_func(char *s))(stack_t **, unsigned int)
 {
-
 	instruction_t ops[] = {
-		{"push", add_dnodeint},
 		{"pall", print_dlistint},
 		{"pint", pint},
 		{"pop", pop},

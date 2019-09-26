@@ -6,16 +6,21 @@
  *
  * Return: number of nodes
  */
-size_t print_dlistint(const stack_t *h)
+void print_dlistint(stack_t **head, unsigned int counter)
 {
-    int x;
-
-    for (x = 0; h != NULL; x++)
+    (void)counter; 
+    if ((*head) == NULL)
     {
-        printf("%i\n", h->n);
-        h = h->next;
+        return;
     }
-    return (x);
+    
+    int x;
+    stack_t *temp = (*head);
+    for (x = 0; temp != NULL; x++)
+    {
+        printf("%i\n", temp->n);
+        temp = temp->next;
+    }
 }
 
 /**
@@ -28,6 +33,7 @@ size_t print_dlistint(const stack_t *h)
  */
 stack_t *add_dnodeint(stack_t **head, const int n)
 {
+    printf("*\n*\n*\n*\n*\n*\n");
     stack_t *newhead = NULL;
     newhead = malloc(sizeof(stack_t));
     if (newhead == NULL)
@@ -41,19 +47,29 @@ stack_t *add_dnodeint(stack_t **head, const int n)
     return (newhead);
 }
 
-int pint(stack_t *head)
+void pint(stack_t **head, unsigned int counter)
 {
-    printf("%i\n", head->n);
-    return(1);
+    if ((*head) == NULL)
+	{
+		fprintf(stderr, "L%u: can't print, stack empty\n", counter);
+		exit(EXIT_FAILURE);
+	}
+
+    printf("%i\n", (*head)->n);
 }
 
-int pop(stack_t **head)
+void pop(stack_t **head, unsigned int counter)
 {
+    if ((*head) == NULL)
+	{
+		fprintf(stderr, "L%u: can't pop an empty stack\n", counter);
+		exit(EXIT_FAILURE);
+	}
+
     (*head) = (*head)->next;
-    return(1);
 }
 
-int add(stack_t **head, int counter)
+void add(stack_t **head, unsigned int counter)
 {
 	stack_t *temp;
 	int number = 0;
@@ -68,5 +84,4 @@ int add(stack_t **head, int counter)
 	temp = (*head)->next;
 	temp->n = temp->n + number;
 	(*head) = temp;
-	return(1);
 }
