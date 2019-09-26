@@ -12,10 +12,9 @@ void print_dlistint(stack_t **head, unsigned int counter)
 	int x;
 	stack_t *temp = (*head);
 	(void)counter;
+
 	if ((*head) == NULL)
-	{
 		return;
-	}
 	for (x = 0; temp != NULL; x++)
 	{
 		printf("%i\n", temp->n);
@@ -29,22 +28,24 @@ void print_dlistint(stack_t **head, unsigned int counter)
  *@head: pointer to pointer of head of linked list
  *@n: const int pointer
  *
- * Return: address of new element, or NULL if failed
+ * Return: void
  */
-stack_t *add_dnodeint(stack_t **head, const int n)
+void add_dnodeint(stack_t **head, const int n)
 {
 	stack_t *newhead = NULL;
 
 	newhead = malloc(sizeof(stack_t));
 	if (newhead == NULL)
-		return (NULL);
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 	newhead->n = n;
 	newhead->next = (*head);
 	newhead->prev = NULL;
 	if ((*head) != NULL)
 		(*head)->prev = newhead;
 	(*head) = newhead;
-	return (newhead);
 }
 
 /**

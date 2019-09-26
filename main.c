@@ -9,7 +9,7 @@ stack_t *head = NULL;
  *
  * Return: 0
  */
-
+void freestack(void);
 int main(int argc, char const *argv[])
 {
 	FILE *fp;
@@ -45,6 +45,7 @@ int main(int argc, char const *argv[])
 	}
 	fclose(fp);
 	free(strtok_address);
+	freestack();
 	return (0);
 }
 
@@ -96,4 +97,22 @@ void execute(char *opcode, unsigned int counter, char *data)
 /*   { */
 /*   add(&head, counter); */
 /*   } */
+}
+/**
+ * freestack - function frees stack_t linked list
+ *
+ * Return: void
+ */
+void freestack(void)
+{
+	stack_t *tmp;
+
+	if (head == NULL)
+		return;
+	else
+	{
+		tmp = head;
+		head = head->next;
+		free(tmp);
+	}
 }
