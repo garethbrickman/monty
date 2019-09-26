@@ -56,6 +56,10 @@ void execute(char *opcode, int counter, char *data)
     {
 	    pop(&head);
     }
+	else if (strcmp(opcode, "add") == 0)
+    {
+	    add(&head, counter);
+    }
 }
 
 int isIN(char *key, char **commands)

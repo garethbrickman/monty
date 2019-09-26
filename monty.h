@@ -41,5 +41,6 @@ stack_t *add_dnodeint(stack_t **head, const int n);
 int pint(stack_t *head);
 int pop(stack_t **head);
 int strdigit(char *str);
+int add(stack_t **head, int counter);
 
 #endif
