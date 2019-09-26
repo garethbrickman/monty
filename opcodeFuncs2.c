@@ -122,7 +122,6 @@ void pstr(stack_t **head, unsigned int counter)
 
 void swap(stack_t **head, unsigned int counter)
 {
-	stack_t *temp;
 	int number1;
 	int number2;
 
