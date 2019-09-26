@@ -38,7 +38,7 @@ typedef struct instruction_s
 /* Global Variable */
 extern stack_t *head;
 /* Prototypes */
-stack_t *add_dnodeint(stack_t **head, const int n);
+void add_dnodeint(stack_t **head, const int n);
 int strdigit(char *str);
 void (*get_op_func(char *s))(stack_t **, unsigned int);
 void print_dlistint(stack_t **h, unsigned int counter);
