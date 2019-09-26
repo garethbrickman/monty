@@ -100,7 +100,7 @@ void add(stack_t **head, unsigned int counter)
 	stack_t *temp;
 	int number = 0;
 
-	if ((*head)->next == NULL)
+	if (((*head)->next == NULL) || ((*head) == NULL))
 	{
 		fprintf(stderr, "L%u: can't add, stack too short", counter);
 		exit(EXIT_FAILURE);
