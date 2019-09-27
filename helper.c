@@ -32,9 +32,10 @@ void freestack(void)
 {
 	stack_t *tmp;
 
-	if (head == NULL)
-		return;
-	tmp = head;
-	head = head->next;
-	free(tmp);
+	while (head)
+	{
+		tmp = head;
+		head = head->next;
+		free(tmp);
+	}
 }
