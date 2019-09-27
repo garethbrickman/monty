@@ -26,7 +26,7 @@ int strdigit(char *str)
 /**
  * freestack - function frees stack_t linked list
  *
- * Return: void
+ * Return: nothing
  */
 void freestack(void)
 {
