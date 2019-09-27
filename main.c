@@ -7,7 +7,7 @@ stack_t *head = NULL;
  * @argc: int number of args
  * @argv: char const * to args
  *
- * Return: 0
+ * Return: 00
  */
 
 int main(int argc, char const *argv[])
