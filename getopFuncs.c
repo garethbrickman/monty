@@ -5,7 +5,7 @@
  *
  *@s: char * string of opcode
  *
- * Return: required function or NULL
+ * Return: apropriate function or NULL
  */
 
 void (*get_op_func(char *s))(stack_t **, unsigned int)
