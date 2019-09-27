@@ -4,7 +4,7 @@
  *
  * @str: char * to input string
  *
- * Return: 1 if string has numeric digits, 0 if it doesn't
+ * Return: 1 if string has only numeric digits, 0 if it doesn't
  */
 
 int strdigit(char *str)
