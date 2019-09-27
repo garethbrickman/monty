@@ -28,7 +28,7 @@ void print_dlistint(stack_t **head, unsigned int counter)
  *@head: pointer to pointer of head of linked list
  *@n: const int pointer
  *
- * Return: void
+ * Return: nothing
  */
 void add_dnodeint(stack_t **head, const int n)
 {
