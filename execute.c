@@ -6,7 +6,7 @@
  * @counter: int line number
  * @data: char * to data for stack_t int n
  *
- * Return: 1 if string has numeric digits, 0 if it doesn't
+ * Return: Nothing
  */
 
 void execute(char *opcode, unsigned int counter, char *data)
