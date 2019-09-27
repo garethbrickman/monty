@@ -1,0 +1,77 @@
+.TH monty 1 "27 September 2019" "version 1.0"
+
+.SH NAME
+
+    monty - a Monty ByteCode Interpreter
+
+.SH SYNOPSIS
+
+.B ./monty
+.I [file path containing .m file]
+
+.SH DESCRIPTION
+.B monty
+is a program for interpreting Monty ByteCode files. Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it.
+
+.SH Overview
+
+Files containing Monty byte codes usually have the .m extension. Most of the industry uses this standard but it is not required by the specification of the language. There is not more than one instruction per line. There can be any number of spaces before or after the opcode and its argument.
+
+.SS Example:
+
+$push 0$
+
+$push 1$
+
+$push 2$
+
+$
+
+$  push 3$
+
+$                   pall    $
+
+$push 4$
+
+$    push 5    $
+
+$      push    6        $
+
+$pall$
+
+.SS Invocation
+
+-   The program must be invoked with only two arguments: monty <path containing .m file>
+
+-   The monty program runs the bytecodes line by line and stop if either:
+    	
+	- it executed properly every line of the file
+   	
+	- it finds an error in the file
+   	
+	- an error occured
+.PP
+.SS Installation
+
+All of the c files in this repository, as well as the header file, must be present in a directory and compiled with "monty" as the name of the executable.
+
+.SS Examples
+
+$gcc *.c -o monty
+
+$monty <file.m>
+.PP
+.SH OPTIONS
+.PP
+.SH BUGS
+Valgrind is known to report errors that, as far as can be ascertained, do not adversely influence program operation.
+
+.SH AUTHORS
+
+Anthony Huggins <anthony.huggins@holbertonschool.com>
+
+Gareth Brickman (gareth.brickman@holbertonschool.com)
+
+.SH SEE ALSO
+
+  Monty Python, Pythons, Julien Barbier
