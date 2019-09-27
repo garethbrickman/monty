@@ -5,7 +5,7 @@
  *@head: double pointer to head of linked list
  *@counter: unsigned int for line counter
  *
- * Return: number of nodes
+ * Return: nothing
  */
 void print_dlistint(stack_t **head, unsigned int counter)
 {
