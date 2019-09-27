@@ -73,7 +73,7 @@ void pint(stack_t **head, unsigned int counter)
  *@head: double pointer to head of linked list
  *@counter: unsigned int for line counter
  *
- * Return: void
+ * Return: nothing
  */
 
 void pop(stack_t **head, unsigned int counter)
