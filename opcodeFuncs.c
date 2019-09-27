@@ -61,7 +61,7 @@ void pint(stack_t **head, unsigned int counter)
 {
 	if ((*head) == NULL)
 	{
-		fprintf(stderr, "L%u: can't print, stack empty\n", counter);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", counter);
 		exit(EXIT_FAILURE);
 	}
 	printf("%i\n", (*head)->n);
