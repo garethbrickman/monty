@@ -54,7 +54,7 @@ void add_dnodeint(stack_t **head, const int n)
  *@head: double pointer to head of linked list
  *@counter: unsigned int for line counter
  *
- * Return: void
+ * Return: nothing
  */
 
 void pint(stack_t **head, unsigned int counter)
